@@ -93,43 +93,47 @@
 
     .products {
       display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha no mobile */
       gap: 16px;
     }
 
     .product-card {
       background-color: var(--bg-card);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
     }
 
     .product-card img {
       width: 100%;
       border-radius: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .product-title {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       margin-bottom: 6px;
     }
 
     .product-desc {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      flex-grow: 1;
     }
 
     .product-card a {
-      display: block;
       text-align: center;
       background-color: var(--accent);
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      padding: 12px;
+      padding: 10px;
       border-radius: 10px;
+      font-size: 14px;
       transition: opacity 0.2s ease;
     }
 
@@ -144,6 +148,17 @@
       font-size: 12px;
       color: var(--text-muted);
     }
+
+    /* DESKTOP */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 1000px;
+      }
+
+      .products {
+        grid-template-columns: repeat(4, 1fr); /* 4 produtos por linha */
+      }
+    }
   </style>
 </head>
 
@@ -156,7 +171,7 @@
       <p class="subtitle">🔥 As melhores promoções do dia estão aqui!</p>
     </header>
 
-    <!-- BOTÃO WHATSAPP (SEMPRE NO TOPO) -->
+    <!-- BOTÃO WHATSAPP (PRIORIDADE MÁXIMA) -->
     <div class="whatsapp-btn">
       <a href="https://chat.whatsapp.com/I3h0ioHHbe9J1q6JM7xy5u" target="_blank">
         <i class="fab fa-whatsapp"></i>
@@ -170,41 +185,31 @@
 
       <div class="products">
 
-<!-- PRODUTO - CREATINA SOLDIERS -->
-<div class="product-card">
-  <img src="images/500-ya8guj3n9l.webp" alt="Creatina Soldiers Monohidratada 500g">
-  
-  <h3 class="product-title">
-    Creatina Soldiers 100% Pura (500g)
-  </h3>
-  
-  <p class="product-desc">
-    Creatina monohidratada importada, ideal para ganho de força,
-    explosão muscular e aumento de massa magra.
-  </p>
-  
-  <a href="https://mercadolivre.com/sec/2Sux9eR" target="_blank">
-    🔥 Comprar com Desconto
-  </a>
-</div>
+        <!-- PRODUTO - CREATINA -->
+        <div class="product-card">
+          <img src="images/500-ya8guj3n9l.webp" alt="Creatina Soldiers 500g">
+          <h3 class="product-title">Creatina Soldiers 100% Pura (500g)</h3>
+          <p class="product-desc">
+            Creatina monohidratada importada para força, explosão e massa muscular.
+          </p>
+          <a href="https://mercadolivre.com/sec/2Sux9eR" target="_blank">
+            🔥 Comprar com Desconto
+          </a>
+        </div>
 
-<!-- PRODUTO - MAQUININHA DRAGÃO -->
-<div class="product-card">
-  <img src="images/a73ff909-fca2-4799-be8a-59999fb864fe.png" alt="Maquininha Dragão Profissional sem fio">
-  
-  <h3 class="product-title">
-    Maquininha Dragão Profissional – Corte Zero Sem Fio
-  </h3>
-  
-  <p class="product-desc">
-    Maquininha potente, recarregável via USB, ideal para barba,
-    cabelo e acabamento zero. Design premium estilo dragão.
-  </p>
-  
-  <a href="https://mercadolivre.com/sec/2F4p8k9" target="_blank">
-    🔥 Comprar com Desconto
-  </a>
-</div>
+        <!-- PRODUTO - MAQUININHA -->
+        <div class="product-card">
+          <img src="images/a73ff909-fca2-4799-be8a-59999fb864fe.png" alt="Maquininha Dragão">
+          <h3 class="product-title">Maquininha Dragão Profissional</h3>
+          <p class="product-desc">
+            Corte zero sem fio, recarregável via USB, acabamento premium.
+          </p>
+          <a href="https://mercadolivre.com/sec/2F4p8k9" target="_blank">
+            🔥 Comprar com Desconto
+          </a>
+        </div>
+
+        <!-- 👉 DUPLIQUE ESSE BLOCO PARA NOVOS PRODUTOS -->
 
       </div>
     </section>
