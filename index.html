@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PJ Promos | As melhores promoções do dia</title>
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ícone WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --bg-dark: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --text-light: #ffffff;
+      --text-muted: #cfcfcf;
+      --accent: #ff7a00;
+      --whatsapp: #25d366;
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      padding: 24px 16px 40px;
+    }
+
+    /* TOPO */
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* BOTÃO WHATSAPP */
+    .whatsapp-btn {
+      margin: 24px 0;
+    }
+
+    .whatsapp-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 16px;
+      border-radius: var(--radius);
+      font-size: 16px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .whatsapp-btn a:hover {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+
+    /* SEÇÃO PROMOÇÕES */
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .products {
+      display: grid;
+      gap: 16px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .product-card a {
+      display: block;
+      text-align: center;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 12px;
+      border-radius: 10px;
+      transition: opacity 0.2s ease;
+    }
+
+    .product-card a:hover {
+      opacity: 0.9;
+    }
+
+    /* RODAPÉ */
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- TOPO -->
+    <header>
+      <div class="logo">PJ Promos</div>
+      <p class="subtitle">🔥 As melhores promoções do dia estão aqui!</p>
+    </header>
+
+    <!-- BOTÃO WHATSAPP (SEMPRE NO TOPO) -->
+    <div class="whatsapp-btn">
+      <a href="https://chat.whatsapp.com/I3h0ioHHbe9J1q6JM7xy5u" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        Entrar no Grupo de Promoções
+      </a>
+    </div>
+
+    <!-- PROMOÇÕES -->
+    <section>
+      <h2 class="section-title">🛒 Promoções Disponíveis</h2>
+
+      <div class="products">
+
+<!-- PRODUTO - CREATINA SOLDIERS -->
+<div class="product-card">
+  <img src="images/500-ya8guj3n9l.webp" alt="Creatina Soldiers Monohidratada 500g">
+  
+  <h3 class="product-title">
+    Creatina Soldiers 100% Pura (500g)
+  </h3>
+  
+  <p class="product-desc">
+    Creatina monohidratada importada, ideal para ganho de força,
+    explosão muscular e aumento de massa magra.
+  </p>
+  
+  <a href="https://mercadolivre.com/sec/2Sux9eR" target="_blank">
+    🔥 Comprar com Desconto
+  </a>
+</div>
+
+<!-- PRODUTO - MAQUININHA DRAGÃO -->
+<div class="product-card">
+  <img src="images/a73ff909-fca2-4799-be8a-59999fb864fe.png" alt="Maquininha Dragão Profissional sem fio">
+  
+  <h3 class="product-title">
+    Maquininha Dragão Profissional – Corte Zero Sem Fio
+  </h3>
+  
+  <p class="product-desc">
+    Maquininha potente, recarregável via USB, ideal para barba,
+    cabelo e acabamento zero. Design premium estilo dragão.
+  </p>
+  
+  <a href="https://mercadolivre.com/sec/2F4p8k9" target="_blank">
+    🔥 Comprar com Desconto
+  </a>
+</div>
+
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+      PJ Promos – Promoções atualizadas diariamente
+    </footer>
+
+  </div>
+</body>
+</html>
