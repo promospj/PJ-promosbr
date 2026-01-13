@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PJ Promos | As melhores promoções do dia</title>
 
-  <!-- Fonte moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>PJ Promos | Ofertas verificadas todos os dias</title>
+  <meta name="description" content="A PJ Promos seleciona diariamente promoções reais em produtos de qualidade. Economize com ofertas verificadas e confiáveis.">
 
-  <!-- Ícone WhatsApp -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     :root {
-      --bg-dark: #0f0f0f;
-      --bg-card: #1a1a1a;
-      --text-light: #ffffff;
-      --text-muted: #cfcfcf;
-      --accent: #ff7a00;
-      --whatsapp: #25d366;
-      --radius: 14px;
+      --bg-main: #0b0d10;
+      --bg-card: #151922;
+      --text-main: #f5f7fa;
+      --text-muted: #9aa4b2;
+      --accent: #ff8a00;
+      --success: #25d366;
+      --radius: 16px;
     }
 
     * {
@@ -30,134 +29,154 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
+      background: var(--bg-main);
+      color: var(--text-main);
       display: flex;
       justify-content: center;
     }
 
     .container {
       width: 100%;
-      max-width: 480px;
-      padding: 24px 16px 40px;
+      max-width: 1100px;
+      padding: 24px 16px 60px;
     }
 
-    /* TOPO */
+    /* HEADER */
     header {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
 
-    .logo {
-      font-size: 32px;
-      font-weight: 800;
-      margin-bottom: 8px;
+    header h1 {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
 
-    .subtitle {
-      font-size: 14px;
+    header p {
+      margin-top: 8px;
+      font-size: 15px;
       color: var(--text-muted);
     }
 
-    /* BOTÃO WHATSAPP */
-    .whatsapp-btn {
-      margin: 24px 0;
-    }
-
-    .whatsapp-btn a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background-color: var(--whatsapp);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 16px;
+    /* CTA WHATSAPP */
+    .cta {
+      background: linear-gradient(135deg, #1ebe5d, #25d366);
       border-radius: var(--radius);
-      font-size: 16px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      padding: 18px;
+      margin: 32px 0;
+      text-align: center;
     }
 
-    .whatsapp-btn a:hover {
-      transform: scale(1.02);
-      opacity: 0.95;
+    .cta a {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
     }
 
-    /* SEÇÃO PROMOÇÕES */
-    .section-title {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 16px;
+    /* SECTION */
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
 
+    /* PRODUCTS */
     .products {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha no mobile */
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
     }
 
-    .product-card {
-      background-color: var(--bg-card);
+    .card {
+      background: var(--bg-card);
       border-radius: var(--radius);
-      padding: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      padding: 14px;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
     }
 
-    .product-card img {
+    .card img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
+      border-radius: 12px;
+      margin-bottom: 12px;
     }
 
-    .product-title {
-      font-size: 14px;
+    .card h3 {
+      font-size: 15px;
       font-weight: 600;
       margin-bottom: 6px;
+      line-height: 1.3;
     }
 
-    .product-desc {
-      font-size: 12px;
+    .card p {
+      font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      line-height: 1.4;
       flex-grow: 1;
     }
 
-    .product-card a {
-      text-align: center;
-      background-color: var(--accent);
-      color: #fff;
-      text-decoration: none;
+    .price {
+      margin: 10px 0;
+      font-size: 16px;
       font-weight: 700;
-      padding: 10px;
-      border-radius: 10px;
+      color: var(--text-main);
+    }
+
+    .card a {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      border-radius: 12px;
       font-size: 14px;
-      transition: opacity 0.2s ease;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity .2s ease;
     }
 
-    .product-card a:hover {
-      opacity: 0.9;
+    .card a:hover {
+      opacity: .9;
     }
 
-    /* RODAPÉ */
+    /* ABOUT */
+    .about {
+      margin: 60px 0 40px;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+    }
+
+    .about h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .about p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* FOOTER */
     footer {
-      margin-top: 32px;
       text-align: center;
       font-size: 12px;
       color: var(--text-muted);
     }
 
-    /* DESKTOP */
-    @media (min-width: 768px) {
-      .container {
-        max-width: 1000px;
-      }
-
-      .products {
-        grid-template-columns: repeat(4, 1fr); /* 4 produtos por linha */
-      }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 6px;
     }
   </style>
 </head>
@@ -165,188 +184,193 @@
 <body>
   <div class="container">
 
-    <!-- TOPO -->
     <header>
-      <div class="logo">PJ Promos</div>
-      <p class="subtitle">🔥 As melhores promoções do dia estão aqui!</p>
+      <h1>PJ Promos</h1>
+      <p>Ofertas verificadas diariamente para você economizar de verdade</p>
     </header>
 
-    <!-- BOTÃO WHATSAPP (PRIORIDADE MÁXIMA) -->
-    <div class="whatsapp-btn">
-      <a href="https://chat.whatsapp.com/I3h0ioHHbe9J1q6JM7xy5u" target="_blank">
+    <div class="cta">
+      <a href="https://chat.whatsapp.com/I3h0ioHHbe9J1q6JM7xy5u" target="_blank" aria-label="Entrar no grupo de promoções no WhatsApp">
         <i class="fab fa-whatsapp"></i>
-        Entrar no Grupo de Promoções
+        Receba promoções reais no WhatsApp
       </a>
     </div>
 
-    <!-- PROMOÇÕES -->
     <section>
-      <h2 class="section-title">🛒 Promoções Disponíveis</h2>
+      <h2>Promoções em destaque</h2>
 
       <div class="products">
 
-        <!-- PRODUTO - CREATINA -->
-        <div class="product-card">
-          <img src="images/500-ya8guj3n9l.webp" alt="Creatina Soldiers 500g">
-          <h3 class="product-title">Creatina Soldiers 100% Pura (500g)</h3>
-          <p class="product-desc">
-            Creatina monohidratada importada para força, explosão e massa muscular. Apenas R$39,90 🔥
-          </p>
-          <a href="https://mercadolivre.com/sec/2Sux9eR" target="_blank">
-            🔥 Comprar com Desconto
-          </a>
+        <div class="card">
+          <img src="images/500-ya8guj3n9l.webp" alt="Creatina Soldiers 500g" loading="lazy">
+          <h3>Creatina Soldiers 500g</h3>
+          <p>Creatina monohidratada importada, ideal para força, explosão e desempenho nos treinos.</p>
+          <div class="price">R$ 39,90</div>
+          <a href="https://mercadolivre.com/sec/2Sux9eR" target="_blank">Ver oferta</a>
         </div>
 
-        <!-- PRODUTO - MAQUININHA -->
-        <div class="product-card">
-          <img src="images/a73ff909-fca2-4799-be8a-59999fb864fe.png" alt="Maquininha Dragão">
-          <h3 class="product-title">Maquininha Dragão Profissional</h3>
-          <p class="product-desc">
-            Corte zero sem fio, recarregável via USB, acabamento premium. Apenas R$19,90 🔥
-          </p>
-          <a href="https://mercadolivre.com/sec/2F4p8k9" target="_blank">
-            🔥 Comprar com Desconto
-          </a>
+        <div class="card">
+          <img src="images/a73ff909-fca2-4799-be8a-59999fb864fe.png" alt="Maquininha Dragão" loading="lazy">
+          <h3>Maquininha Dragão Profissional</h3>
+          <p>Máquina sem fio com corte preciso, bateria recarregável e acabamento premium.</p>
+          <div class="price">R$ 19,90</div>
+          <a href="https://mercadolivre.com/sec/2F4p8k9" target="_blank">Ver oferta</a>
         </div>
 
-        <!-- PRODUTO - GARRAFA TÉRMICA -->
-<div class="product-card">
-  <img src="images/WhatsApp Image 2026-01-08 at 14.36.54.jpeg" alt="Garrafa Térmica Inox 800ml">
-  
-  <h3 class="product-title">
-    Garrafa Térmica Inox 800ml – Gela por 24h 🔥
-  </h3>
-  
-  <p class="product-desc">
-    Garrafa térmica de aço inox com parede dupla, mantém bebidas
-    geladas por até 24h e quentes por horas. Ideal para academia,
-    trabalho e viagens. Apenas R$32,99
+<div class="card">
+  <img src="images/WhatsApp Image 2026-01-08 at 14.36.54.jpeg" alt="Garrafa Térmica Inox 800ml" loading="lazy">
+
+  <h3>Garrafa Térmica Inox 800ml</h3>
+
+  <p>
+    Garrafa em aço inox com parede dupla, mantém bebidas geladas por até
+    24 horas e quentes por longos períodos. Ideal para trabalho, academia e viagens.
   </p>
-  
+
+  <div class="price">R$ 32,99</div>
+
   <a href="https://mercadolivre.com/sec/1bJBWcY" target="_blank">
-    🔥 Comprar com Desconto
+    Ver oferta
   </a>
 </div>
 
-        <!-- PRODUTO - ÓCULOS DE SOL -->
-<div class="product-card">
-  <img src="images/WhatsApp Image 2026-01-08 at 15.15.22.jpeg" alt="Óculos de Sol Quadrado Preto Fosco UV400 Unissex">
-  
-  <h3 class="product-title">
-    Óculos de Sol Quadrado Premium UV400 – Fosco 🔥
-  </h3>
-  
-  <p class="product-desc">
-    Óculos unissex com proteção UV400, design moderno quadrado,
-    acabamento fosco e disponível em 3 cores. Estilo e proteção
-    para o dia a dia. Apenas R$28,99
+<div class="card">
+  <img src="images/WhatsApp Image 2026-01-08 at 15.15.22.jpeg" alt="Óculos de Sol Quadrado Premium UV400" loading="lazy">
+
+  <h3>Óculos de Sol Quadrado Premium UV400</h3>
+
+  <p>
+    Óculos unissex com proteção UV400, design quadrado moderno
+    e acabamento fosco. Estilo e proteção para o dia a dia.
   </p>
-  
+
+  <div class="price">R$ 28,99</div>
+
   <a href="https://mercadolivre.com/sec/2TM3Hvx" target="_blank">
-    🔥 Comprar com Desconto
+    Ver oferta
   </a>
 </div>
 
-        <!-- PRODUTO - AVON SEGNO -->
-<div class="product-card">
-  <img src="images/avon-segno.jpeg" alt="Perfume Avon Segno Deo Parfum 100ml">
-  
-  <h3 class="product-title">
-    Perfume Avon Segno Deo Parfum 100ml – Masculino Intenso 🔥
-  </h3>
-  
-  <p class="product-desc">
-    Fragrância masculina marcante e sofisticada, ideal para quem
-    busca presença, elegância e longa duração no dia a dia ou à noite.
-    Apenas R$89,99
+<div class="card">
+  <img src="images/avon-segno.jpeg" alt="Perfume Avon Segno Deo Parfum 100ml" loading="lazy">
+
+  <h3>Perfume Avon Segno Deo Parfum 100ml</h3>
+
+  <p>
+    Fragrância masculina marcante e sofisticada, com ótima fixação,
+    ideal para quem busca presença e elegância no dia a dia ou à noite.
   </p>
-  
+
+  <div class="price">R$ 89,99</div>
+
   <a href="https://mercadolivre.com/sec/25qwX67" target="_blank">
-    🔥 Comprar com Desconto
+    Ver oferta
   </a>
 </div>
 
-                <!-- PRODUTO - CAPA PARA COLCHÃO IMPERMEÁVEL -->
-<div class="product-card">
-  <img src="images/Captura de tela 2026-01-09 150944.png" alt="Capa Para Colchão Impermeavel Matelado Com Elastico">
-  
-  <h3 class="product-title">
-    Capa Para Colchão Impermeavel Matelado Com Elastico
-  </h3>
-  
-  <p class="product-desc">
-    Capa de Elástico impermeável para proteger o colchão
-    e preserva-lo por mais tempo. Apenas R$33,99
+<div class="card">
+  <img src="images/Captura de tela 2026-01-09 150944.png" alt="Capa para Colchão Impermeável Matelada" loading="lazy">
+
+  <h3>Capa para Colchão Impermeável</h3>
+
+  <p>
+    Capa matelada com elástico e proteção impermeável,
+    ideal para preservar o colchão e aumentar sua durabilidade.
   </p>
-  
-  <a href="https://s.shopee.com.br/1LZNzAH3pe?share_channel_code=1" target="_blank">
-    🔥 Comprar com Desconto
+
+  <div class="price">R$ 33,99</div>
+
+  <a href="https://s.shopee.com.br/1LZNzAH3pe" target="_blank">
+    Ver oferta
   </a>
 </div>
 
-                <!-- PRODUTO - TORNEIRA EM AÇO INOX -->
-<div class="product-card">
-  <img src="images/Captura de tela 2026-01-09 151852.png" alt="Torneira Em Aço Inoxidável">
-  
-  <h3 class="product-title">
-    Torneira Em Aço Inoxidável 🔥
-  </h3>
-  
-  <p class="product-desc">
-    Torneira Em Aço Inox De Luxo Cor Prata Com
-    Rotação 360º Para Cozinha Super Promoção. Apenas R$25,99
+<div class="card">
+  <img src="images/Captura de tela 2026-01-09 151852.png" alt="Torneira em Aço Inoxidável" loading="lazy">
+
+  <h3>Torneira em Aço Inoxidável</h3>
+
+  <p>
+    Torneira em aço inox com rotação 360°, ideal para cozinhas modernas,
+    oferecendo praticidade, durabilidade e design elegante.
   </p>
-  
-  <a href="https://s.shopee.com.br/5Am6Y466Rk?share_channel_code=1" target="_blank">
-    🔥 Comprar com Desconto
+
+  <div class="price">R$ 25,99</div>
+
+  <a href="https://s.shopee.com.br/5Am6Y466Rk" target="_blank">
+    Ver oferta
   </a>
 </div>
 
-                        <!-- PRODUTO - ÓCULOS DE CICLISMO E CORRIDA -->
-<div class="product-card">
-  <img src="images/Captura de tela 2026-01-10 103435.png" alt="Óculos De Ciclismo e Corrida">
-  
-  <h3 class="product-title">
-    Óculos De Ciclismo UV 400 🔥
-  </h3>
-  
-  <p class="product-desc">
-    Óculos de Sol masculino e feminino para
-    Corrida, Ciclismo, Beach Tennis, Praia, Volei 
-    polarizado com Proteção UV400. Apenas R$28,99
+<div class="card">
+  <img src="images/Captura de tela 2026-01-10 103435.png" alt="Óculos de Ciclismo UV400" loading="lazy">
+
+  <h3>Óculos de Ciclismo UV400</h3>
+
+  <p>
+    Óculos esportivo com proteção UV400, indicado para ciclismo,
+    corrida e atividades ao ar livre com conforto e proteção visual.
   </p>
-  
+
+  <div class="price">R$ 28,99</div>
+
   <a href="https://s.shopee.com.br/6favWz4GBs" target="_blank">
-    🔥 Comprar com Desconto
+    Ver oferta
   </a>
 </div>
 
-                                <!-- PRODUTO - ÓCULOS DE SOL JULIET -->
-<div class="product-card">
-  <img src="images/images (3).jfif" alt="Óculos De Sol Juliet">
-  
-  <h3 class="product-title">
-    Óculos JULIET UV 🔥
-  </h3>
-  
-  <p class="product-desc">
-    Óculos de Sol masculino para Praia, Festas, 
-    Shows, Atividades ao Ar Livre
-    polarizado com Proteção UV400. Apenas R$11,99
+<div class="card">
+  <img src="images/images (3).jfif" alt="Óculos Juliet UV" loading="lazy">
+
+  <h3>Óculos Juliet UV</h3>
+
+  <p>
+    Óculos masculino com proteção UV, ideal para praia,
+    eventos e uso diário, com visual marcante e moderno.
   </p>
-  
+
+  <div class="price">R$ 11,99</div>
+
   <a href="https://s.shopee.com.br/2VlMYp1qa9" target="_blank">
-    🔥 Comprar com Desconto
+    Ver oferta
   </a>
 </div>
-        <!-- 👉 DUPLIQUE ESSE BLOCO PARA NOVOS PRODUTOS -->
+
+<div class="card">
+  <img src="images/Captura de tela 2026-01-13 082433 (1).png" alt="Óculos Nattanzinho UV" loading="lazy">
+
+  <h3>Óculos Nattanzinho UV</h3>
+
+  <p>
+    Óculos masculino com proteção UV, ideal para lazer,
+    praia e eventos, unindo conforto e estilo no dia a dia.
+  </p>
+
+  <div class="price">R$ 19,99</div>
+
+  <a href="https://s.shopee.com.br/8APo4Pwkx2" target="_blank">
+    Ver oferta
+  </a>
+</div>
 
       </div>
     </section>
 
-    <!-- RODAPÉ -->
+    <div class="about">
+      <h3>Sobre a PJ Promos</h3>
+      <p>
+        A PJ Promos é uma curadoria independente de ofertas online.
+        Selecionamos diariamente produtos com bom custo-benefício em marketplaces confiáveis,
+        ajudando você a economizar com segurança e praticidade.
+      </p>
+    </div>
+
     <footer>
-      PJ Promos – Promoções atualizadas diariamente
+      <p>PJ Promos © 2026</p>
+      <p>
+        <a href="#">Política de Privacidade</a> ·
+        <a href="#">Termos de Uso</a>
+      </p>
     </footer>
 
   </div>
