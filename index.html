@@ -1,388 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PJ Promos | Ofertas verificadas todos os dias</title>
-  <meta name="description" content="A PJ Promos seleciona diariamente promoções reais em produtos de qualidade. Economize com ofertas verificadas e confiáveis.">
+<title>PJ Promos | Ofertas verificadas todos os dias</title>
+<meta name="description" content="Promoções reais em suplementos, moda, casa e acessórios. Ofertas verificadas diariamente pela PJ Promos.">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-main: #0b0d10;
-      --bg-card: #151922;
-      --text-main: #f5f7fa;
-      --text-muted: #9aa4b2;
-      --accent: #ff8a00;
-      --success: #25d366;
-      --radius: 16px;
-    }
+<style>
+:root{
+--bg-main:#0b0d10;
+--bg-card:#151922;
+--text-main:#f5f7fa;
+--text-muted:#9aa4b2;
+--accent:#ff8a00;
+--radius:16px;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Inter", sans-serif;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
 
-    body {
-      background: var(--bg-main);
-      color: var(--text-main);
-      display: flex;
-      justify-content: center;
-    }
+body{background:var(--bg-main);color:var(--text-main);display:flex;justify-content:center}
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      padding: 24px 16px 60px;
-    }
+.container{width:100%;max-width:1100px;padding:24px 16px 60px}
 
-    /* HEADER */
-    header {
-      text-align: center;
-      margin-bottom: 32px;
-    }
+header{text-align:center;margin-bottom:24px}
+header h1{font-size:34px;font-weight:700}
+header p{color:var(--text-muted);font-size:15px;margin-top:6px}
 
-    header h1 {
-      font-size: 34px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
+.cta{
+background:linear-gradient(135deg,#1ebe5d,#25d366);
+padding:16px;border-radius:var(--radius);
+margin:24px 0;text-align:center
+}
+.cta a{color:#fff;font-weight:600;text-decoration:none}
 
-    header p {
-      margin-top: 8px;
-      font-size: 15px;
-      color: var(--text-muted);
-    }
+.categories{
+display:flex;gap:10px;overflow-x:auto;
+margin-bottom:28px
+}
+.categories button{
+background:var(--bg-card);
+border:none;color:var(--text-main);
+padding:10px 14px;border-radius:12px;
+cursor:pointer;font-weight:500;white-space:nowrap
+}
+.categories button.active{background:var(--accent)}
 
-    /* CTA WHATSAPP */
-    .cta {
-      background: linear-gradient(135deg, #1ebe5d, #25d366);
-      border-radius: var(--radius);
-      padding: 18px;
-      margin: 32px 0;
-      text-align: center;
-    }
+section h2{font-size:22px;margin-bottom:18px}
 
-    .cta a {
-      color: #fff;
-      font-size: 17px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-    }
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:20px
+}
 
-    /* SECTION */
-    section h2 {
-      font-size: 22px;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
+@media(max-width:768px){
+.products{grid-template-columns:repeat(2,1fr);gap:14px}
+}
 
-    /* PRODUCTS */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
-    }
+.card{
+background:var(--bg-card);
+border-radius:var(--radius);
+padding:14px;display:flex;
+flex-direction:column;
+box-shadow:0 10px 25px rgba(0,0,0,.35)
+}
+.card img{width:100%;border-radius:12px;margin-bottom:10px}
+.card h3{font-size:14px;margin-bottom:6px}
+.card p{font-size:13px;color:var(--text-muted);flex-grow:1}
+.price{font-weight:700;margin:8px 0}
+.card a{
+background:var(--accent);color:#fff;
+text-align:center;padding:10px;
+border-radius:12px;text-decoration:none;font-weight:600
+}
 
-    .card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 10px 25px rgba(0,0,0,.35);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .card p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.4;
-      flex-grow: 1;
-    }
-
-    .price {
-      margin: 10px 0;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .card a {
-      background: var(--accent);
-      color: #fff;
-      text-align: center;
-      padding: 12px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity .2s ease;
-    }
-
-    .card a:hover {
-      opacity: .9;
-    }
-
-    /* ABOUT */
-    .about {
-      margin: 60px 0 40px;
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 28px;
-      text-align: center;
-    }
-
-    .about h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-
-    .about p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin: 0 6px;
-    }
-  </style>
+footer{text-align:center;font-size:12px;color:var(--text-muted);margin-top:50px}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<main class="container">
 
-    <header>
-      <h1>PJ Promos</h1>
-      <p>Ofertas verificadas diariamente para você economizar de verdade</p>
-    </header>
+<header>
+<h1>PJ Promos</h1>
+<p>Ofertas verificadas diariamente para você economizar de verdade</p>
+</header>
 
-    <div class="cta">
-      <a href="https://chat.whatsapp.com/I3h0ioHHbe9J1q6JM7xy5u" target="_blank" aria-label="Entrar no grupo de promoções no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        Receba promoções reais no WhatsApp
-      </a>
-    </div>
-
-    <section>
-      <h2>Promoções em destaque</h2>
-
-      <div class="products">
-
-        <div class="card">
-          <img src="images/500-ya8guj3n9l.webp" alt="Creatina Soldiers 500g" loading="lazy">
-          <h3>Creatina Soldiers 500g</h3>
-          <p>Creatina monohidratada importada, ideal para força, explosão e desempenho nos treinos.</p>
-          <div class="price">R$ 39,90</div>
-          <a href="https://mercadolivre.com/sec/2Sux9eR" target="_blank">Ver oferta</a>
-        </div>
-
-        <div class="card">
-          <img src="images/a73ff909-fca2-4799-be8a-59999fb864fe.png" alt="Maquininha Dragão" loading="lazy">
-          <h3>Maquininha Dragão Profissional</h3>
-          <p>Máquina sem fio com corte preciso, bateria recarregável e acabamento premium.</p>
-          <div class="price">R$ 19,90</div>
-          <a href="https://mercadolivre.com/sec/2F4p8k9" target="_blank">Ver oferta</a>
-        </div>
-
-<div class="card">
-  <img src="images/WhatsApp Image 2026-01-08 at 14.36.54.jpeg" alt="Garrafa Térmica Inox 800ml" loading="lazy">
-
-  <h3>Garrafa Térmica Inox 800ml</h3>
-
-  <p>
-    Garrafa em aço inox com parede dupla, mantém bebidas geladas por até
-    24 horas e quentes por longos períodos. Ideal para trabalho, academia e viagens.
-  </p>
-
-  <div class="price">R$ 32,99</div>
-
-  <a href="https://mercadolivre.com/sec/1bJBWcY" target="_blank">
-    Ver oferta
-  </a>
+<div class="cta">
+<a href="https://chat.whatsapp.com/I3h0ioHHbe9J1q6JM7xy5u" target="_blank">
+Entre no nosso grupo de promoções no WhatsApp!
+</a>
 </div>
 
-<div class="card">
-  <img src="images/WhatsApp Image 2026-01-08 at 15.15.22.jpeg" alt="Óculos de Sol Quadrado Premium UV400" loading="lazy">
-
-  <h3>Óculos de Sol Quadrado Premium UV400</h3>
-
-  <p>
-    Óculos unissex com proteção UV400, design quadrado moderno
-    e acabamento fosco. Estilo e proteção para o dia a dia.
-  </p>
-
-  <div class="price">R$ 28,99</div>
-
-  <a href="https://mercadolivre.com/sec/2TM3Hvx" target="_blank">
-    Ver oferta
-  </a>
+<!-- FILTRO -->
+<div class="categories">
+<button class="active" data-filter="mais-vendidos">🔥 Mais Vendidos</button>
+<button data-filter="saude"> Saúde</button>
+<button data-filter="casa"> Casa</button>
+<button data-filter="moda"> Moda</button>
+<button data-filter="acessorios"> Acessórios</button>
+<button data-filter="perfumaria"> Perfumaria</button>
+<button data-filter="diversos"> Diversos</button>
 </div>
 
-<div class="card">
-  <img src="images/avon-segno.jpeg" alt="Perfume Avon Segno Deo Parfum 100ml" loading="lazy">
+<section>
+<h2 id="section-title">🔥 Mais Vendidos</h2>
 
-  <h3>Perfume Avon Segno Deo Parfum 100ml</h3>
+<div class="products" id="products">
 
-  <p>
-    Fragrância masculina marcante e sofisticada, com ótima fixação,
-    ideal para quem busca presença e elegância no dia a dia ou à noite.
-  </p>
-
-  <div class="price">R$ 89,99</div>
-
-  <a href="https://mercadolivre.com/sec/25qwX67" target="_blank">
-    Ver oferta
-  </a>
+<!-- PRODUTOS -->
+<div class="card" data-category="mais-vendidos saude">
+<img src="images/500-ya8guj3n9l.webp" alt="Creatina Soldiers 500g" loading="lazy">
+<h3>Creatina Soldiers 500g</h3>
+<p>Creatina monohidratada importada.</p>
+<div class="price">R$ 39,90</div>
+<a href="https://mercadolivre.com/sec/2Sux9eR" target="_blank">Ver oferta</a>
 </div>
 
-<div class="card">
-  <img src="images/Captura de tela 2026-01-09 150944.png" alt="Capa para Colchão Impermeável Matelada" loading="lazy">
-
-  <h3>Capa para Colchão Impermeável</h3>
-
-  <p>
-    Capa matelada com elástico e proteção impermeável,
-    ideal para preservar o colchão e aumentar sua durabilidade.
-  </p>
-
-  <div class="price">R$ 33,99</div>
-
-  <a href="https://s.shopee.com.br/1LZNzAH3pe" target="_blank">
-    Ver oferta
-  </a>
+<div class="card" data-category="mais-vendidos acessorios">
+<img src="images/Captura de tela 2026-01-10 103435.png" alt="Óculos de Ciclismo UV400" loading="lazy">
+<h3>Óculos de Ciclismo UV400</h3>
+<p>Ideal para esportes ao ar livre.</p>
+<div class="price">R$ 28,99</div>
+<a href="https://s.shopee.com.br/6favWz4GBs" target="_blank">Ver oferta</a>
 </div>
 
-<div class="card">
-  <img src="images/Captura de tela 2026-01-09 151852.png" alt="Torneira em Aço Inoxidável" loading="lazy">
-
-  <h3>Torneira em Aço Inoxidável</h3>
-
-  <p>
-    Torneira em aço inox com rotação 360°, ideal para cozinhas modernas,
-    oferecendo praticidade, durabilidade e design elegante.
-  </p>
-
-  <div class="price">R$ 25,99</div>
-
-  <a href="https://s.shopee.com.br/5Am6Y466Rk" target="_blank">
-    Ver oferta
-  </a>
+<div class="card" data-category="mais-vendidos acessorios">
+<img src="images/images (3).jfif" alt="Óculos Juliet UV" loading="lazy">
+<h3>Óculos Juliet UV</h3>
+<p>Design marcante e moderno.</p>
+<div class="price">R$ 11,99</div>
+<a href="https://s.shopee.com.br/2VlMYp1qa9" target="_blank">Ver oferta</a>
 </div>
 
-<div class="card">
-  <img src="images/Captura de tela 2026-01-10 103435.png" alt="Óculos de Ciclismo UV400" loading="lazy">
-
-  <h3>Óculos de Ciclismo UV400</h3>
-
-  <p>
-    Óculos esportivo com proteção UV400, indicado para ciclismo,
-    corrida e atividades ao ar livre com conforto e proteção visual.
-  </p>
-
-  <div class="price">R$ 28,99</div>
-
-  <a href="https://s.shopee.com.br/6favWz4GBs" target="_blank">
-    Ver oferta
-  </a>
+<div class="card" data-category="mais-vendidos acessorios">
+<img src="images/Captura de tela 2026-01-13 082433 (1).png" alt="Óculos Nattanzinho UV" loading="lazy">
+<h3>Óculos Nattanzinho UV</h3>
+<p>Estilo e conforto.</p>
+<div class="price">R$ 19,99</div>
+<a href="https://s.shopee.com.br/8APo4Pwkx2" target="_blank">Ver oferta</a>
 </div>
 
-<div class="card">
-  <img src="images/images (3).jfif" alt="Óculos Juliet UV" loading="lazy">
-
-  <h3>Óculos Juliet UV</h3>
-
-  <p>
-    Óculos masculino com proteção UV, ideal para praia,
-    eventos e uso diário, com visual marcante e moderno.
-  </p>
-
-  <div class="price">R$ 11,99</div>
-
-  <a href="https://s.shopee.com.br/2VlMYp1qa9" target="_blank">
-    Ver oferta
-  </a>
+<div class="card" data-category="casa">
+<img src="images/Captura de tela 2026-01-09 151852.png" alt="Torneira Inox" loading="lazy">
+<h3>Torneira Inox 360°</h3>
+<p>Durável e moderna.</p>
+<div class="price">R$ 25,99</div>
+<a href="https://s.shopee.com.br/5Am6Y466Rk" target="_blank">Ver oferta</a>
 </div>
 
-<div class="card">
-  <img src="images/Captura de tela 2026-01-13 082433 (1).png" alt="Óculos Nattanzinho UV" loading="lazy">
-
-  <h3>Óculos Nattanzinho UV</h3>
-
-  <p>
-    Óculos masculino com proteção UV, ideal para lazer,
-    praia e eventos, unindo conforto e estilo no dia a dia.
-  </p>
-
-  <div class="price">R$ 19,99</div>
-
-  <a href="https://s.shopee.com.br/8APo4Pwkx2" target="_blank">
-    Ver oferta
-  </a>
+<div class="card" data-category="casa">
+<img src="images/Captura de tela 2026-01-09 150944.png" alt="Capa de Colchão Impermeável" loading="lazy">
+<h3>Capa de Colchão Impermeável</h3>
+<p>Ideal para conservar o Colchão.</p>
+<div class="price">R$ 33,99</div>
+<a href="https://s.shopee.com.br/1LZNzAH3pe" target="_blank">Ver oferta</a>
 </div>
 
-      </div>
-    </section>
+<div class="card" data-category="perfumaria">
+<img src="images/avon-segno.jpeg" alt="Perfume Avon Segno Deo Parfum 100ml" loading="lazy">
+<h3>Perfume Avon Segno Deo Parfum 100ml</h3>
+<p>Ideal para Momentos Marcantes.</p>
+<div class="price">R$ 89,99</div>
+<a href="https://mercadolivre.com/sec/25qwX67" target="_blank">Ver oferta</a>
+</div>
 
-    <div class="about">
-      <h3>Sobre a PJ Promos</h3>
-      <p>
-        A PJ Promos é uma curadoria independente de ofertas online.
-        Selecionamos diariamente produtos com bom custo-benefício em marketplaces confiáveis,
-        ajudando você a economizar com segurança e praticidade.
-      </p>
-    </div>
+<div class="card" data-category="diversos">
+<img src="images/WhatsApp Image 2026-01-08 at 14.36.54.jpeg" alt="Garrafa Térmica Inox 800ml" loading="lazy">
+<h3>Garrafa Térmica Inox 800ml</h3>
+<p>Resistente e Design Moderno.</p>
+<div class="price">R$ 33,99</div>
+<a href="https://mercadolivre.com/sec/1bJBWcY" target="_blank">Ver oferta</a>
+</div>
 
-    <footer>
-      <p>PJ Promos © 2026</p>
-      <p>
-        <a href="#">Política de Privacidade</a> ·
-        <a href="#">Termos de Uso</a>
-      </p>
-    </footer>
+</div>
+</section>
 
-  </div>
+<footer>
+<p>PJ Promos © 2026</p>
+</footer>
+
+</main>
+
+<script>
+const buttons=document.querySelectorAll('.categories button');
+const cards=document.querySelectorAll('.card');
+const title=document.getElementById('section-title');
+
+buttons.forEach(btn=>{
+btn.onclick=()=>{
+buttons.forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+
+const filter=btn.dataset.filter;
+title.textContent=btn.textContent;
+
+cards.forEach(card=>{
+card.style.display=card.dataset.category.includes(filter)?"flex":"none";
+});
+};
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
